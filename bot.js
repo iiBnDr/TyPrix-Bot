@@ -28,5 +28,109 @@ client.user.setStatus("dnd")
 });
 
 
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`🌹  ولكم نورت السيرفر🌹 
+👑اسم العضو  ${member}👑  
+انت العضو رقم ${member.guild.memberCount} `) 
+}).catch(console.error)
+})
+
+client.on('message', message => {
+                                if(!message.channel.guild) return;
+                        if (message.content.startsWith('$ping')) {
+                            if(!message.channel.guild) return;
+                            var msg = `${Date.now() - message.createdTimestamp}`
+                            var api = `${Math.round(client.ping)}`
+                            if (message.author.bot) return;
+                        let embed = new Discord.RichEmbed()
+                        .setAuthor(message.author.username,message.author.avatarURL)
+                        .setColor('RANDOM')
+                        .addField('**Time Taken:**',msg + " ms 📶 ")
+                        .addField('**WebSocket:**',api + " ms 📶 ")
+         message.channel.send({embed:embed});
+                        }
+                    });
+
+client.on('message', message => {
+ 
+    if (message.content === "$mutechat") {
+                        if(!message.channel.guild) return message.reply(' This command only for servers');
+ 
+if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' ليس لديك صلاحيات');
+           message.channel.overwritePermissions(message.guild.id, {
+         SEND_MESSAGES: false
+ 
+           }).then(() => {
+               message.reply("تم تقفيل الشات ✅ ")
+           });
+             }
+//™¦༺♚ƙἶղց|MaS♚༺¦™#7105
+if (message.content === "$unmutechat") {
+    if(!message.channel.guild) return message.reply(' This command only for servers');
+ 
+if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('ليس لديك صلاحيات');
+           message.channel.overwritePermissions(message.guild.id, {
+         SEND_MESSAGES: true
+ 
+           }).then(() => {
+               message.reply("تم فتح الشات✅")
+           });
+             }
+ 
+ 
+ 
+});
+
+client.on('message', message => {
+  if (true) {
+if (message.content === '$invite') {
+      message.author.send('  https://discordapp.com/api/oauth2/authorize?client_id=522386598726336513&permissions=8&scope=bot    ').catch(e => console.log(e.stack));
+ 
+    }
+   }
+  });
+ 
+ 
+client.on('message', message => {
+     if (message.content === ".invite") {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#9B59B6")
+  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
+     
+     
+     
+  message.channel.sendEmbed(embed);
+    }
+});
+
+
+client.on('message', message => {
+var prefix = "$"
+    if (message.content.startsWith(prefix + 'clear')) {
+      if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(`ليس لديك برمشن[*MANAGE_MESSAGES*] `).catch(console.error);
+  message.delete()
+  if(!message.channel.guild) return;
+  let args = message.content.split(" ").slice(1);
+  
+  const messagecount = parseInt(args.join(' '));
+  
+  message.channel.fetchMessages({
+  
+  limit: messagecount
+  
+  }).then(messages => message.channel.bulkDelete(messages));
+  message.channel.sendMessage("", {embed: {
+    title: "``✏️✅ تــم مسح الشات ``",
+    color: 0x06DF00,
+    footer: {
+    
+    }
+    }}).then(msg => {msg.delete(3000)});
+  };
+  
+  });
+
 
 client.login(process.env.BOT_TOKEN);
