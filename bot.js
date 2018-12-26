@@ -1,5 +1,4 @@
 ﻿const Discord = require("discord.js");
-const moment= ("moment");
 const client = new Discord.Client();
 var prefix = "$";
 client.on("message", message => {
