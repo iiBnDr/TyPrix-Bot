@@ -1,5 +1,4 @@
 ﻿const Discord = require("discord.js");
-const ms = require("ms");
 const client = new Discord.Client();
 var prefix = "$";
 client.on("message", message => {
@@ -186,94 +185,6 @@ client.on('guildDelete', guild => {
     "\n" + "**" + " ● Server Created At : " + "**" +
     "\n" + "**" + "» " + guild.createdAt.toLocaleString() + "**")
  
-});
-
-
-let userData = JSON.parse(fs.readFileSync('Storage/userData.json', 'utf8'));
- 
- 
-bot.on("message", message => {
-   
-        let sender = message.author;
-        if(!userData[sender.id + message.guild.id]) userData[sender.id + message.guild.id] = {}
-        if(!userData[sender.id + message.guild.id].money) userData[sender.id + message.guild.id].money = 1000;
-        // if(!userData[sender.id + message.guild.id].lastDaily) userData[sender.id + message.guild.id].lastDaily = 'Not Collected'
-       
-        fs.writeFile('Storage/userData.json', JSON.stringify(userData), (err) => {
-            if(err) console.log(err)
-             
-        })
-});
- 
-bot.on("message", message => {
-    let sender = message.author
-   if(sender === bot) return
-    if(message.content.startsWith(prefix + "credit" || "credits" )) {
-        let mention = message.mentions.users.first()
-            let embed = new Discord.RichEmbed()
-            .setTitle('Bank!')
-            .setColor('RANDOM')
-            .addField('Account holder', `${message.author}`,true)
-            .addField('Account balance', `${userData[sender.id + message.guild.id].money}`, true)
-            message.channel.send(embed)
-             }
-});
- 
- 
-bot.on("message", message => {
-    let sender = message.author
-   if(sender === bot) return
-    if(message.content.startsWith(prefix + "credit")) {
-        let mention = message.mentions.users.first()
-            if(!mention) {
-            let embedx = new Discord.RichEmbed()
-           
-            .setTitle('Bank!')
-            .setColor('RANDOM')
-            .addField('Account holder', `${message.author}`,true)
-            .addField('Account balance', `${userData[sender.id + message.guild.id].money}`, true)
-            message.channel.send(embedx)
-             }
-             if(mention) {
-                 let embed = new Discord.RichEmbed()
-                 
-                 .setTitle('Bank!')
-                 .setColor('RANDOM')
-                 .addField(`Account holder`, `${mention}`,true)
-                 .addField(`Account balance`, `${userData[sender.id + message.guild.id].money}`,true)
-                 message.channel.send(embed)
-             }  
-    }
-});
- 
- 
-bot.on("message", message => {
-    if(message.content.startsWith(prefix + "daily")) {
-        let sender = message.author
-        if(userData[sender.id + message.guild.id].lastDaily != moment().format('L')) {
-            userData[sender.id + message.guild.id].lastDaily = moment().format('L')
-            userData[sender.id + message.guild.id].money += 200;
-            let embed = new Discord.RichEmbed()
-.setTitle('Daily Reward.')
-.setColor('RANDOM')
-.addField(`You have now`, `${userData[sender.id + message.guild.id].money}`,true)
- 
-           
-            message.channel.send(embed)
-        } else {
-            let embed1 = new Discord.RichEmbed()
-            .setTitle(`You have already collected your daily reward dude. , Your next daily will be in ${moment().endOf('day').fromNow()} .`)
-            .setColor('RANDOM')
-            message.channel.send(embed1)
-        }
-    }
-   
-   
-   
-        fs.writeFile('Storage/userData.json', JSON.stringify(userData), (err) => {
-            if(err) console.log(err)
-             
-        })
 });
 
 
