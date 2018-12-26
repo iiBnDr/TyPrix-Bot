@@ -1,41 +1,7 @@
-const Discord = require('discord.js');
-
-const Util = require('discord.js');
-
-const getYoutubeID = require('get-youtube-id');
-
-const Canvas = require('canvas');
-
-const jimp = require('jimp');
-
-const convert = require("hh-mm-ss");
-
-const dateFormat = require('dateformat');
-
-const fetchVideoInfo = require('youtube-info');
-
-const YouTube = require('simple-youtube-api');
-
-const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
-
-const queue = new Map();
-
-const ytdl = require('ytdl-core');
-
-const fs = require('fs');
-
-const moment = require('moment');
-
-const gif = require("gif-search");
-
-const client = new Discord.Client({disableEveryone: true});
-
-
-const prefix = "#";
-
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
+const Discord = require("discord.js");
+const client = new Discord.Client();
+var prefix = "$";
+client.on("message", message => {
 
             if (message.content.startsWith(prefix + "bc")) {
                          if (!message.member.hasPermission("ADMINISTRATOR"))  return;
