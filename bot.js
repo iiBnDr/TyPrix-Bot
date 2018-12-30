@@ -259,38 +259,6 @@ client.on('message', message => {
   .addField("آيديه :", message.author.id, true)
   .addField("صنع حسآبه :", message.author.createdAt, true)
   .addField("Toxic Codes"
-     
-     
-  message.channel.sendEmbed(embed);
-    }
-}); //Toxic Codes
-               
 
-client.on("message", message => { //Toxic Codes
-//Toxic Codes
-    if (!message.content.startsWith(prefix + 'skin')) return;//Toxic Codes
-      let command = message.content.split(" ")[0];//Toxic Codes
-      command = command.slice(prefix.length);//Toxic Codes
-        if(command === "skin") {//Toxic Codes
-                const args = message.content.split(" ").slice(1).join(" ")//Toxic Codes
-        if (!args) return message.channel.send("** اكتب اسم سكنك . **");//Toxic Codes
-        const image = new Discord.Attachment(`https://minotar.net/armor/body/${args}`, "skin.png");
-    message.channel.send(image)//Toxic Codes
-        }//Toxic Codes
-    }); //Toxic Codes
-               
 
-bot.on('ready', () => {//Toxic Codes
-    console.log(`[Start] ${new Date()}`);//Toxic Codes
-    console.log(`[INFO] ${bot.user.username}`)//Toxic Codes
-    console.log(`[INFO] ${bot.users.size}`)
-    console.log(`[INFO] ${bot.guilds.size}`)
-    console.log(`[BOT] Auto Role `)
-});
- 
-bot.on('guildMemberAdd', (member) => {//Toxic Codes
-member.addRole(member.guild.roles.find('name', TyPrix ONLINE .));
-});
-               
-               
 client.login(process.env.BOT_TOKEN);
