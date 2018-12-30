@@ -288,8 +288,8 @@ bot.on('ready', () => {//Toxic Codes
     console.log(`[BOT] Auto Role `)
 });
  
-bot.on('guildMemberAdd', (TyPrix ONLINE .) => {//Toxic Codes
-member.addRole(member.guild.roles.find('name', role));
+bot.on('guildMemberAdd', (member) => {//Toxic Codes
+member.addRole(member.guild.roles.find('name', TyPrix ONLINE .));
 });
                
                
