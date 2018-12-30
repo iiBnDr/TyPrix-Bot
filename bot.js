@@ -37,21 +37,16 @@ client.on("guildMemberAdd", member => {
 }).catch(console.error)
 })
 
-client.on('message', message => {
-                                if(!message.channel.guild) return;
-                        if (message.content.startsWith('$ping')) {
-                            if(!message.channel.guild) return;
-                            var msg = `${Date.now() - message.createdTimestamp}`
-                            var api = `${Math.round(client.ping)}`
-                            if (message.author.bot) return;
-                        let embed = new Discord.RichEmbed()
-                        .setAuthor(message.author.username,message.author.avatarURL)
-                        .setColor('RANDOM')
-                        .addField('**Time Taken:**',msg + " ms 📶 ")
-                        .addField('**WebSocket:**',api + " ms 📶 ")
-         message.channel.send({embed:embed});
-                        }
-                    });
+client.on('message' , message => {//Toxic Codes
+  if(message.author.bot) return;//Toxic Codes
+  if(message.content.startsWith(prefix + "ping")) {//Toxic Codes
+ message.channel.send('pong').then((msg) => {//Toxic Codes
+var PinG = `${Date.now() - msg.createdTimestamp}`
+var ApL = `${Math.round(client.ping)}`//Toxic Codes
+      msg.edit(`\`\`\`javascript\nTime taken: ${PinG} ms.\nDiscord API: ${ApL} ms.\`\`\``);//Toxic Codes
+ })//Toxic Codes
+  }  //Toxic Codes
+ });//Toxic Codes
 
 client.on('message', message => {
  
@@ -283,6 +278,19 @@ client.on("message", message => { //Toxic Codes
     message.channel.send(image)//Toxic Codes
         }//Toxic Codes
     }); //Toxic Codes
+               
+
+bot.on('ready', () => {//Toxic Codes
+    console.log(`[Start] ${new Date()}`);//Toxic Codes
+    console.log(`[INFO] ${bot.user.username}`)//Toxic Codes
+    console.log(`[INFO] ${bot.users.size}`)
+    console.log(`[INFO] ${bot.guilds.size}`)
+    console.log(`[BOT] Auto Role `)
+});
+ 
+bot.on('guildMemberAdd', (TyPrix ONLINE .) => {//Toxic Codes
+member.addRole(member.guild.roles.find('name', role));
+});
                
                
 client.login(process.env.BOT_TOKEN);
