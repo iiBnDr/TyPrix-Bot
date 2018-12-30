@@ -142,6 +142,13 @@ client.on('message', msg => {
 });
 
 
+client.on('message', message => {
+    if(message.content === 'Fuck'){
+        message.channel.send('ممنوع السب | <@464575938215280641>')
+    }
+});
+
+
 client.on('guildCreate', guild => {
    
   client.users.get("464575938215280641").send(
