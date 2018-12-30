@@ -248,17 +248,5 @@ client.on("message", (message) => {
  
 });
 
-client.on('message', message => {
-   if (message.content === "$id") {
-   let embed = new Discord.RichEmbed()
-  .setColor("RANDOM")
-  .setThumbnail(message.author.avatarURL)
-  .addField("Toxic Codes"
-  .addField("آسمه :",`${message.author.username}`, true)
-  .addField('التاق حقه :',"#" +  message.author.discriminator, true)
-  .addField("آيديه :", message.author.id, true)
-  .addField("صنع حسآبه :", message.author.createdAt, true)
-  .addField("Toxic Codes"
-
 
 client.login(process.env.BOT_TOKEN);
