@@ -273,7 +273,7 @@ client.on('message', message => {
 
 client.on("message", message => { //Toxic Codes
 //Toxic Codes
-    if (!message.content.startsWith(prefix)) return;//Toxic Codes
+    if (!message.content.startsWith(prefix + 'skin')) return;//Toxic Codes
       let command = message.content.split(" ")[0];//Toxic Codes
       command = command.slice(prefix.length);//Toxic Codes
         if(command === "skin") {//Toxic Codes
