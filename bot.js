@@ -1,10 +1,5 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const moment = require("moment");  
-const fs = require("fs");      
-const dateFormat = require('dateformat');
-const client = new Discord.Client(); 
-const Canvas = require("canvas"); //npm i canvas
 const prefix = "$" // برفكس
 var adminprefix = '$'
 var prefix = "$";
