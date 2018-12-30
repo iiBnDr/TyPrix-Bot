@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const prefix = "$" // برفكس
 var adminprefix = '$'
 var prefix = "$";
 client.on("message", message => {
