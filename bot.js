@@ -271,4 +271,18 @@ client.on('message', message => {
 }); //Toxic Codes
                
 
+client.on("message", message => { //Toxic Codes
+//Toxic Codes
+    if (!message.content.startsWith(prefix)) return;//Toxic Codes
+      let command = message.content.split(" ")[0];//Toxic Codes
+      command = command.slice(prefix.length);//Toxic Codes
+        if(command === "skin") {//Toxic Codes
+                const args = message.content.split(" ").slice(1).join(" ")//Toxic Codes
+        if (!args) return message.channel.send("** اكتب اسم سكنك . **");//Toxic Codes
+        const image = new Discord.Attachment(`https://minotar.net/armor/body/${args}`, "skin.png");
+    message.channel.send(image)//Toxic Codes
+        }//Toxic Codes
+    }); //Toxic Codes
+               
+               
 client.login(process.env.BOT_TOKEN);
