@@ -1,11 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const moment = require("moment");  
-const fs = require("fs");      
-const dateFormat = require('dateformat');
-const client = new Discord.Client(); 
-const Canvas = require("canvas"); //npm i canvas
-const prefix = "YOUR Prefix Here" // برفكس
+const moment = require("moment");
+const ms = require('ms')
 var adminprefix = '$'
 var prefix = "$";
 client.on("message", message => {
