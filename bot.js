@@ -426,7 +426,7 @@ if(message.content === prefix + 'quran') {
 				msg.edit(embed)
 			})
 			cancel.on('collect', r => {
-				embed.setDescription(`**سوف يتم إغلاق القائمة**`);
+				embed.setDescription(`**صدق الله العظيم**`);
 				embed.setImage('');
 				embed.setFooter(`Menu will close after 3sec`, 'https://cdn.discordapp.com/attachments/404332408075190282/412722171325054996/NS1.png');
 				msg.edit(embed).then(msg.delete(3000));
