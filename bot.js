@@ -83,7 +83,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 client.on('message', message => {
   if (true) {
 if (message.content === '$invite') {
-      message.author.send('  https://discordapp.com/api/oauth2/authorize?client_id=522386598726336513&permissions=8&scope=bot    ').catch(e => console.log(e.stack));
+      message.author.send('  https://discordapp.com/api/oauth2/authorize?client_id=533106835784335370&permissions=8&scope=bot   ').catch(e => console.log(e.stack));
  
     }
    }
