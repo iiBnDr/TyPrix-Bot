@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const moment = require("moment");
 const ms = require('ms')
+const bot = require('discord.js-musicbot-addon');
 var adminprefix = '$'
 var prefix = "$";
 client.on("message", message => {
