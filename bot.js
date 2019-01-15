@@ -446,4 +446,13 @@ client.on("message", (message) => {
     }
 })
 
+
+const bot = require('discord.js');
+
+bot.start(client, {
+  youtubeKey: "AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8",
+  musichelp : "$help",
+ botPrefix : "$"
+});
+
 client.login(process.env.BOT_TOKEN);
