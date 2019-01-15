@@ -442,13 +442,16 @@ client.on("message", (message) => {
         message.channel.send(JSON.stringify({
             email: Math.random().toString(36).slice(4).trim()+"@typrix.com",
             password: Math.random().toString(36).slice(4).trim()
+client.on("message", (message) => {
+    if(message.content.startsWith(prefix+"email")) {
+        message.channel.send(JSON.stringify({
             email: Math.random().toString(36).slice(4).trim()+"@gmail.com",
             password: Math.random().toString(36).slice(4).trim
+client.on("message", (message) => {
+    if(message.content.startsWith(prefix+"email")) {
+        message.channel.send(JSON.stringify({
             email: Math.random().toString(36).slice(4).trim()+"@cliptik.com",
-            password: Math.random().toString(36).slice(4).trim()
-
-            email: Math.random().toString(36).slice(4).trim()+"@cliptik.com",
-            password: Math.random().toString(36).slice(4).trim()
+            password: Math.random().toString(36).slice(4).trim(
         }))
     }
 })
