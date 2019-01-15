@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const moment = require("moment");
 const ms = require('ms')
-const bot = require('discord.js-musicbot-addon');
 var adminprefix = '$'
 var prefix = "$";
 client.on("message", message => {
@@ -439,21 +438,20 @@ if(message.content === prefix + 'quran') {
 
 
 client.on("message", (message) => {
-    if(message.content.startsWith(prefix+"gmail")) {
+    if(message.content.startsWith(prefix+"email")) {
         message.channel.send(JSON.stringify({
+            email: Math.random().toString(36).slice(4).trim()+"@typrix.com",
+            password: Math.random().toString(36).slice(4).trim()
             email: Math.random().toString(36).slice(4).trim()+"@gmail.com",
+            password: Math.random().toString(36).slice(4).trim
+            email: Math.random().toString(36).slice(4).trim()+"@cliptik.com",
+            password: Math.random().toString(36).slice(4).trim()
+
+            email: Math.random().toString(36).slice(4).trim()+"@cliptik.com",
             password: Math.random().toString(36).slice(4).trim()
         }))
     }
 })
 
-
-const bot = require('discord.js-musicbot-addon');
-
-bot.start(client, {
-  youtubeKey: "AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8",
-  musichelp : "$help",
- botPrefix : "$"
-});
 
 client.login(process.env.BOT_TOKEN);
