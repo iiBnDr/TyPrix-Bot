@@ -95,12 +95,15 @@ client.on("message", async message => {
 
 
 client.on('ready', () => {
-   console.log(`----------------`);
-      console.log(`Desert Bot- Script By : i1Suhaib`);
-        console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
-    console.log(`----------------`);
-  console.log(`Logged in as ${client.user.tag}!`);
+console.log(`We Logged In !Successfully`);
+console.log(`Your Login Data :`);
+console.log(`---------------------`);
+console.log(`Bot Name :`);
+console.log(`${client.user.tag}`);
+console.log(`How Many Server Joined ?!`);
+console.log(`Your Bot Now ! is Working In ${client.guilds.size} Servers`);
+console.log(`---------------------`);
+console.log(`You Can Test The Bot Now ;D`);
 client.user.setGame(`$bc | TyPrixTM Shop`,"http://twitch.tv/S-F")
 client.user.setStatus("dnd")
 });
@@ -648,7 +651,7 @@ client.on('message', message => {
 
 
 client.on('message', msg => {
-    if(msg.content.startsWith('bot')) {
+    if(msg.content.startsWith('$bot')) {
     if(msg.channel.type === 'dm') return;
 const user = msg.mentions.users.first();
 if(!user) return msg.channel.send('``' + '**قم بتحديد بوت**' + '``')
