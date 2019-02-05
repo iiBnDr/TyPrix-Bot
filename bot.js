@@ -493,7 +493,7 @@ if(message.content === prefix + 'quran') {
 			})
 			sforwards.on('collect', r => {
 				if (page === pages.length) return;
-				page = 200; // إذا تبي تكمل ل 600 صفحة غير الرقم للصفحة الي وصلت لها
+				page = 600; // إذا تبي تكمل ل 600 صفحة غير الرقم للصفحة الي وصلت لها
 				embed.setImage(pages[page-1]);
 				embed.setFooter(`القراآن الكريم | صفحة رقم ${page} من اصل ${pages.length} صفحة`, 'https://cdn.discordapp.com/attachments/404332408075190282/412722171325054996/NS1.png');
 				msg.edit(embed)
@@ -501,8 +501,8 @@ if(message.content === prefix + 'quran') {
 			cancel.on('collect', r => {
 				embed.setDescription(`**صدق الله العظيم**`);
 				embed.setImage('');
-				embed.setFooter(`Menu will close after 3sec`, 'https://cdn.discordapp.com/attachments/404332408075190282/412722171325054996/NS1.png');
-				msg.edit(embed).then(msg.delete(3000));
+				embed.setFooter(`سبحان الله وبحمده , سبحان الله العظيم`, 'https://cdn.discordapp.com/attachments/404332408075190282/412722171325054996/NS1.png');
+				msg.edit(embed).then(msg.delete(7000));
 			})
 		})
 	})
@@ -613,6 +613,20 @@ client.on("message", msg => {
     msg.channel.send(embed);
   }
 });
+
+
+client.on('message', msg => {
+    if(msg.content.startsWith('bot')) {
+    if(msg.channel.type === 'dm') return;
+const user = msg.mentions.users.first();
+if(!user) return msg.channel.send('``' + '**قم بتحديد بوت**' + '``')
+if(!user.bot) return msg.reply('\`منشن بوت\`');
+msg.channel.send(`**Bot InviteURL : ** https://discordapp.com/oauth2/authorize?client_id=${user.id}&scope=bot&permissions=384064`)
+    }
+});
+
+
+
 
 
 client.login(process.env.BOT_TOKEN);
