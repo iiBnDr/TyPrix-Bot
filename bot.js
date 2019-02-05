@@ -647,5 +647,16 @@ client.on('message', message => {
 });
 
 
+client.on('message', msg => {
+    if(msg.content.startsWith('bot')) {
+    if(msg.channel.type === 'dm') return;
+const user = msg.mentions.users.first();
+if(!user) return msg.channel.send('``' + '**قم بتحديد بوت**' + '``')
+if(!user.bot) return msg.reply('\`منشن بوت\`');
+msg.channel.send(`**Bot InviteURL : ** https://discordapp.com/oauth2/authorize?client_id=${user.id}&scope=bot&permissions=384064`)
+    }
+});
+
+
 
 client.login(process.env.BOT_TOKEN);
