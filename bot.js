@@ -104,7 +104,7 @@ console.log(`How Many Server Joined ?!`);
 console.log(`Your Bot Now ! is Working In ${client.guilds.size} Servers`);
 console.log(`---------------------`);
 console.log(`You Can Test The Bot Now ;D`);
-client.user.setGame(`$bc | TyPrixTM Shop`,"http://twitch.tv/S-F")
+client.user.setGame(`$bc | SMaT Shop`,"http://twitch.tv/S-F")
 client.user.setStatus("dnd")
 });
 
