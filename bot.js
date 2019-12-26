@@ -111,9 +111,9 @@ client.user.setStatus("dnd")
 
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
-  return channel.send(`🌹  ولكم نورت السيرفر🌹 
-👑اسم العضو  ${member}👑  
-انت العضو رقم ${member.guild.memberCount} `) 
+  return channel.send(`نورت السيرفر ❤️
+📒 اليوزر 📒  ${member}  
+✏️ انت العضو رقم : ${member.guild.memberCount} ✏️ `) 
 }).catch(console.error)
 })
 
