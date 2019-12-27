@@ -109,14 +109,6 @@ client.user.setStatus("dnd")
 });
 
 
-client.on("guildMemberAdd", member => {
-  member.createDM().then(function (channel) {
-  return channel.send(`نورت السيرفر ❤️
-📒 اليوزر 📒  ${member}  
-✏️ انت العضو رقم : ${member.guild.memberCount} ✏️ `) 
-}).catch(console.error)
-})
-
 client.on('message' , message => {//Toxic Codes
   if(message.author.bot) return;//Toxic Codes
   if(message.content.startsWith(prefix + "ping")) {//Toxic Codes
