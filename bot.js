@@ -1,9 +1,5 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const moment = require("moment");
-const fs = require("fs");
-const ms = require('ms')
-const fetch = require('node-fetch');
 var adminprefix = '$'
 var prefix = "$";
 
@@ -104,7 +100,7 @@ console.log(`How Many Server Joined ?!`);
 console.log(`Your Bot Now ! is Working In ${client.guilds.size} Servers`);
 console.log(`---------------------`);
 console.log(`You Can Test The Bot Now ;D`);
-client.user.setGame(`$bc | SMaT Shop`,"http://twitch.tv/S-F")
+client.user.setGame(`$bc | SMaT Shop`,"http://twitch.tv/wisgm")
 client.user.setStatus("dnd")
 });
 
