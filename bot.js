@@ -244,7 +244,14 @@ client.on("message", (message) => {
  
   if (message.content.startsWith("$close")) {
         if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
-   /// Last Codes
+ 
+       message.channel.send(`الرجاء اعادة كتابة الامر للتأكيد`)
+           .then((m) => {
+               message.channel.awaitMessages(response => response.content === '$close', {
+                       max: 1,
+                       time: 10000,
+                       errors: ['time'],
+                   })    /// Last Codes
                    .then((collected) => {
                        message.channel.delete();
                    })    /// ALPHA CODES
@@ -257,7 +264,6 @@ client.on("message", (message) => {
    }
  
 });
-
 
 
 client.on('message', message => {
