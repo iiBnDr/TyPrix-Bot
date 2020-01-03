@@ -121,7 +121,7 @@ var ApL = `${Math.round(client.ping)}`//Toxic Codes
 
 client.on('message', message => {
 var prefix = "$"
-    if (message.content.startsWith(prefix + 'clear')) {
+    if (message.content.startsWith(prefix + 'cs')) {
       if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(`ليس لديك برمشن[*MANAGE_MESSAGES*] `).catch(console.error);
   message.delete()
   if(!message.channel.guild) return;
