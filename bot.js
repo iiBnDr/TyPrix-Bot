@@ -500,8 +500,8 @@ client.on('message', message => {
 client.on('message', message => {
  
     let prefix = "$"; //Prefix
-    let guildID = "516307527806484490"; // ايدي االسيرفر الي يشتغل فيه الكوماند
-    let ownerID = "516307527806484490"; //ايدي حقك
+    let guildID = "659841797438046209"; // ايدي االسيرفر الي يشتغل فيه الكوماند
+    let ownerID = "659890543362441247"; //ايدي حقك
     if(message.content.startsWith(prefix+"changeName")){
         if(message.author.bot) return message.channel.send("Please use this command as a player only!")
         if(message.channel.type == "dm") return message.channel.send("This command is for servers only!")
