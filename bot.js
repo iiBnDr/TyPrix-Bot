@@ -497,5 +497,82 @@ client.on('message', message => {
 
 
 
+client.on('message', message => {
+ 
+    let prefix = "$"; //Prefix
+    let guildID = "516307527806484490"; // ايدي االسيرفر الي يشتغل فيه الكوماند
+    let ownerID = "516307527806484490"; //ايدي حقك
+    if(message.content.startsWith(prefix+"changeName")){
+        if(message.author.bot) return message.channel.send("Please use this command as a player only!")
+        if(message.channel.type == "dm") return message.channel.send("This command is for servers only!")
+        if(!message.author.id == ownerID) return message.channel.send("You are not allowed to use this command.")
+        if(!message.guild.id == guildID) return message.channel.send("This Command can not be used in this server.")
+ 
+ 
+        var args = message.content.split(" ").slice(1).join(" ");
+ 
+        if(!args) return message.channel.send(" type the new name after the command..")
+ 
+        try{
+            client.user.setUsername(args);
+            message.channel.send("Done Changed the bot name to `"+args+"`");
+        }catch(e){
+            message.channel.send("Error: "+e.message);
+        }
+ 
+    }else if(message.content.startsWith(prefix+"setGame")){
+        if(message.author.bot) return message.channel.send("Please use this command as a player only!")
+        if(message.channel.type == "dm") return message.channel.send("This command is for servers only!")
+        if(!message.author.id == ownerID) return message.channel.send("You are not allowed to use this command.")
+        if(!message.guild.id == guildID) return message.channel.send("This Command can not be used in this server.")
+ 
+ 
+        var args = message.content.split(" ")[1];
+        var newplaying = message.content.split(" ").slice(2).join(" ");
+ 
+        if(!args) return message.channel.send("Type the Game type after the command games: playing, watching, listening")
+ 
+        let games = ["playing", "watching", "listening"]
+ 
+        if(!games.includes(args.toLowerCase())) return message.channel.send(`Incorecct game type examples: playing, watching, listening`);
+ 
+ 
+ 
+        if(!newplaying) return message.channel.send("type the playing message after the game type usage: "+prefix+"setGame playing ${prefix}help for help\n**Warning: bot_prefix will be replaced to the prefix of the bot!**")
+ 
+        try{
+            client.user.setActivity(newplaying.replace("bot_prefix", prefix), {type: args})
+            message.channel.send("Changed the bot game type to : "+args+ "\nGame message: "+newplaying.replace("bot_prefix", prefix))
+        }catch(e){
+            message.channel.send("Error: "+e.message);
+        }
+ 
+ 
+ 
+    }else if(message.content.startsWith(prefix+"changeAvatar")){
+        if(message.author.bot) return message.channel.send("Please use this command as a player only!")
+        if(message.channel.type == "dm") return message.channel.send("This command is for servers only!")
+        if(!message.author.id == ownerID) return message.channel.send("You are not allowed to use this command.")
+        if(!message.guild.id == guildID) return message.channel.send("This Command can not be used in this server.")
+ 
+ 
+        var args = message.content.split(" ")[1];
+ 
+        if(!args) return message.reply('specify a avatar link!')//By 3Mo_Steve || fwadaw
+//By 3Mo_Steve || fwadawdw
+//By 3Mo_Steve || fwadaw53
+        try{//By 3Mo_Steve || fwadaw3
+            client.user.setAvatar(args)//By 3Mo_Steve || fwadaww
+            message.channel.send("Done Changed bot avatar")//By 3Mo_Steve || fwadaw5
+        }catch(e){//By 3Mo_Steve || fwadawa
+            message.channel.send("Error: "+e.message);//By 3Mo_Steve || fwadaw6
+        }//By 3Mo_Steve || fwadaw7
+//By 3Mo_Steve || fwadaw9
+    }//By 3Mo_Steve || fwadaw8
+})//By 3Mo_Steve || fwadaw6
+//By 3Mo_Steve || fwadaw
+
+
+
 
 client.login(process.env.BOT_TOKEN);
