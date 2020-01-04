@@ -234,7 +234,7 @@ client.on("message", (message) => {
             const embed = new Discord.RichEmbed()
                 .setColor(0xCF40FA)
                 .addField(`Hey ${message.author.username}!`, `عزيزي ${client.user.tag} ,
-الرجاء الانتظارالى ان يرى تذكرتك احد المشرفين @<`)
+الرجاء الانتظارالى ان يرى تذكرتك احد المشرفين @<464575938215280641>`)
                 .setTimestamp()
             c.send({
                 embed: embed
