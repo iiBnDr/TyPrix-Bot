@@ -230,11 +230,12 @@ client.on("message", (message) => {
                 SEND_MESSAGES: true,
                 READ_MESSAGES: true
             });
-            message.channel.send(`:white_check_mark: تم انشاء تذكرتك, #${c.name}.`);
+            message.channel.send(`:white_check_mark: تم انشاء التذكرة بنجاح, #${c.name}.`);
             const embed = new Discord.RichEmbed()
                 .setColor(0xCF40FA)
-                .addField(`Hey ${message.author.username}!`, `تم فتح تذكرة الرجاء انتظار الى حين يأتي مشرف ويقوم بلرد عليك`)
-                .setTimestamp();
+                .addField(`Hey ${message.author.username}!`, `عزيزي ${client.user.tag} ,
+الرجاء الانتظارالى ان يرى تذكرتك احد المشرفين @<`)
+                .setTimestamp()
             c.send({
                 embed: embed
             });
