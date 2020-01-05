@@ -574,17 +574,7 @@ client.on('message', message => {
 //By 3Mo_Steve || fwadaw
 
 
-client['on']('guildMemberAdd', async(member) => {
-  if(member['user'].bot){
-    var botrole = member['guild'].roles['find'](LoveNouNOu => LoveNouNOu['name'] === "BOTS");
-    botrole ? member['addRole'](botrole) : false;
-  }else{
-    var userrole = member['guild'].roles['find'](LoveNouNOu => {
-      LoveNouNOu['name'] === "MEMBER"
-    })
-    userrole ? member['addRole'](userrole) : false;
-  }
-})```
+
 
  
 
