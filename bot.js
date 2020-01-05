@@ -586,7 +586,7 @@ client.on('message', message => {
     })
     userrole ? member['addRole'](userrole) : false;
   }
-})```
+})
 
 
 client.login(process.env.BOT_TOKEN);
