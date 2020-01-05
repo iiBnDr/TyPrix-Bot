@@ -576,7 +576,17 @@ client.on('message', message => {
 
 
 
- 
+ client['on']('guildMemberAdd', async(member) => {
+  if(member['user'].bot){
+    var botrole = member['guild'].roles['find'](LoveNouNOu => LoveNouNOu['name'] === "BOTS");
+    botrole ? member['addRole'](botrole) : false;
+  }else{
+    var userrole = member['guild'].roles['find'](LoveNouNOu => {
+      LoveNouNOu['name'] === "MEMBER"
+    })
+    userrole ? member['addRole'](userrole) : false;
+  }
+})```
 
 
 client.login(process.env.BOT_TOKEN);
