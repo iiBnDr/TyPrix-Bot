@@ -588,9 +588,11 @@ client.on('message', message => {
   }
 })
 
+
 var short = require("isgd")
 client["on"]("message", async m => {
-  if (m["content"]["startsWith"](prefix +"short")) {
+let prefix = "$"
+  if (m["content"]["startsWith"](prefix+"short")) {
     let url = m["content"].split(" ").slice(1).join(" ")
     if(!url) return m["channel"]["send"]("**Usage: `#short <URL>`**")
     else {
@@ -600,6 +602,7 @@ client["on"]("message", async m => {
     }
   }
 });
+
 
 
 
